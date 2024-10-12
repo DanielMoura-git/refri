@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'fruta';
+    src: url('fonte/Feira\ da\ Fruta.ttf') format('truetype');
+    
+}
+
+.item{
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: var(--background);
+}
+.item.active{
+    display: block;
+}
+.item .title{
+    font-size: 200px;
+    color: aliceblue;
+    font-family: 'fruta';
+
+    z-index: 2;
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+}
+.item .fruit{
+    width: 90%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+
+    opacity: 90%;
+}
+.item .refri{
+    z-index: 2;
+    width: 600px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+}
+
+#prev, #next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    background-color: #eee9;
+    border: 1px solid #eee9;
+    color: #eee;
+    font-size: x-large;
+    font-family: 'fruta';
+    cursor: pointer;
+    z-index: 4;
+    border-radius: 50%;
+}
+#prev{
+    right: 30px;
+}
+#next{
+    left: 30px;
+}
+#prev:hover, #next:hover{
+    background-color: darkgrey;
+}
+
+@keyframes toActive {
+    from{
+        top: 100% ; 
+        opacity: 0 ;
+    }
+}
+.item.active img.fruit{
+    animation: toActive 1s ease-in-out 1;
+}
+.item.active .title{
+    animation: toActive 0.5s ease-in-out 1;
+}
